@@ -1,0 +1,27 @@
+<template name="NPCs">
+	<h2>Add a new NPC</h2>
+	{{> quickForm collection="NPCs" id="insertNPCForm" type="insert"}}
+	<hr>
+	<h2>NPCs</h2>
+	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Asset Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each NPCs}}
+			<tr>
+				<td>{{title}}</td>
+				<td>{{assetName}}</td>
+				<td class="text-center">
+				<a href="{{pathFor 'NPC'}}">
+					<button class="btn-sm btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+				</a>
+			</td>
+			</tr>		
+		{{/each}}
+	</tbody>
+</table>
+</template>

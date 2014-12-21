@@ -1,0 +1,27 @@
+<template name="items">
+<h2>Add a new item</h2>
+{{> quickForm collection="Items" id="insertItemForm" type="insert"}}
+<hr>
+<h2>Items</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Asset Name</th>
+		</tr>
+	</thead>
+	<tbody>
+{{#each items}}
+	<tr>
+		<td>{{title}}</td>
+		<td>{{assetName}}</td>
+		<td class="text-center">
+			<a href="{{pathFor 'item'}}">
+				<button class="btn-sm btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+			</a>
+		</td>
+	</tr>
+{{/each}}
+	</tbody>
+</table>
+</template>

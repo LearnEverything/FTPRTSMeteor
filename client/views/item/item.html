@@ -1,0 +1,39 @@
+<template name="item">
+{{#with item}}
+<div class="row">
+	<div class="bg-primary" role="alert">
+	<div class="container">
+		<h3 style="display:inline-block;">Item</h3>
+			<div class="pull-right">
+				<a href="{{pathFor 'itemUpdate'}}">
+					<button class="btn-sm btn-primary">Update Item</button>
+				</a>
+			
+			<button class="btn-sm btn-warning">Delete Item</button>
+			</div>
+	</div>
+	</div>
+	</div>
+	<h1>{{title}}</h1>
+	<h2>{{assetName}}</h2>
+{{/with}}
+</template>
+
+<template name="itemUpdate">
+{{#with item}}
+<div class="row">
+	<div class="bg-primary" role="alert">
+	<div class="container">
+		<h3 style="display:inline-block;">Update Item</h3>
+			<div class="pull-right">
+				<a href="{{pathFor 'item'}}">
+					<button class="btn-sm btn-warning">Cancel</button>
+				</a>
+				<button class="btn-sm btn-danger">Restore Defaults</button>
+			</div>
+		</div>
+	</div>
+	</div>
+	{{> quickForm collection="Items" doc=this id="updateItemForm" type="update"}}
+{{/with}}
+</template>

@@ -1,0 +1,16 @@
+<template name="defaultLayout">
+{{> navbar}}
+	<div class="container">
+		{{> yield}}
+	</div>
+</template>
+
+<template name="navbar">
+	<nav class="navbar navbar-default">
+		<ul class="nav navbar-nav">
+			<li><a href="{{pathFor 'maps'}}">Maps</a></li>
+			<li><a href="{{pathFor 'NPCs'}}">NPCs</a></li>
+			<li><a href="{{pathFor 'items'}}">Items</a></li>
+		</ul>
+	</nav>
+</template>
